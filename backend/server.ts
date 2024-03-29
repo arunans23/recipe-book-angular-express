@@ -26,5 +26,11 @@ app.get("/recipes/:id", (req: Request, res: Response) => {
     res.send(recipes[id]);
 });
 
+app.post("/recipes", (req: Request, res: Response) => {
+    const recipe = req.body;
+    recipes.push(recipe);
+    res.send(recipes);
+});
+
 //Start the app and listen on the PORT
 app.listen(PORT, () => { console.log(`Server Started at PORT ${ PORT }`); });

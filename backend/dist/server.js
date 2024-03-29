@@ -22,5 +22,14 @@ var recipes = [
 app.get("/recipes", (req, res) => {
     res.send(recipes);
 });
+app.get("/recipes/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    res.send(recipes[id]);
+});
+app.post("/recipes", (req, res) => {
+    const recipe = req.body;
+    recipes.push(recipe);
+    res.send(recipes);
+});
 //Start the app and listen on the PORT
 app.listen(PORT, () => { console.log(`Server Started at PORT ${PORT}`); });

@@ -18,6 +18,7 @@ var recipes: Recipe[] = [
     new Recipe('Summer Salad', 'Okayish', 'http://ohmyveggies.com/wp-content/uploads/2013/06/the_perfect_summer_salad.jpg', [])];
 
 app.get("/recipes", (req: Request, res: Response) => {
+    res.set('Access-Control-Allow-Origin', 'http://localhost:4200');
     res.send(recipes);
 });
 

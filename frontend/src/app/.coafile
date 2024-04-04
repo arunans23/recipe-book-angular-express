@@ -1,0 +1,3 @@
+[cli]
+bears = coalaBear
+files = app.component.ts,app.module.ts,app.routing.ts,dropdown.directive.ts,header.component.ts

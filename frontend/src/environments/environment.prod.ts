@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'http://recipebookbackend-3516716906:5001',
+  apiBaseUrl: '/choreo-apis/5nio/recipebookbackend/recipe-book-api-480/v1.0',
 };

@@ -39,7 +39,6 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
   }
 
   onAddToShoppingList(){
-    console.log("onAddToShoppingList");
     this.sls.addItems(this.selectedRecipe.ingredients);
   }
 

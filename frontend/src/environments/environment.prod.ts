@@ -1,3 +1,4 @@
 export const environment = {
-  production: false
+  production: true,
+  apiBaseUrl: 'http://recipebookbackend-3516716906:5001',
 };

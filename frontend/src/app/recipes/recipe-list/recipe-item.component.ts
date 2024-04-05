@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Recipe} from "../recipe";
 import { RouterModule } from '@angular/router';
 
@@ -8,12 +8,8 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule]
 })
-export class RecipeItemComponent implements OnInit {
+export class RecipeItemComponent {
   @Input()recipe: Recipe;
   @Input()recipeId: number;
-
-  ngOnInit(): void {
-      console.log("RecipeItemComponent ngOnInit");
-  }
 
 }

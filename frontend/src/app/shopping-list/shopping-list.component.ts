@@ -18,7 +18,6 @@ export class ShoppingListComponent implements OnInit {
 
   ngOnInit() {
     this.items = this.sls.getItems();
-    console.log("ShoppingListComponent ngOnInit items: ", this.items);
   }
 
   onSelectItem(item: Ingredient){

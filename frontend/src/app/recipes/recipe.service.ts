@@ -3,20 +3,18 @@ import {Recipe} from "./recipe";
 import {Ingredient} from "../shared/ingredient";
 import {HttpHeaders, HttpClient} from "@angular/common/http";
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class RecipeService {
 
   recipesChanged = new EventEmitter<Recipe[]>();
 
-  private recipes: Recipe[] = [
-    new Recipe('Schnitzel', 'Very tasty', 'http://www.daringgourmet.com/wp-content/uploads/2014/03/Schnitzel-7_edited.jpg', [
-      new Ingredient("French Fries", 2),
-      new Ingredient("Pork Meat", 1)
-    ]),
-    new Recipe('Summer Salad', 'Okayish', 'http://ohmyveggies.com/wp-content/uploads/2013/06/the_perfect_summer_salad.jpg', [])];
+  private recipes: Recipe[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.fetchData();
+  }
 
   getRecipes(){
     return this.recipes;
@@ -43,12 +41,11 @@ export class RecipeService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
-    return this.http.put('https://recipebook-7dd32.firebaseio.com/recipes.json', body, {headers: headers});
+    return this.http.put(environment.apiBaseUrl + '/recipes', body, {headers: headers});
   }
 
   fetchData(){
-    console.log("test");
-    return this.http.get('http://localhost:5001/recipes')
+    return this.http.get(environment.apiBaseUrl + '/recipes')
     .pipe(
       map((response: any ) => response)
     )

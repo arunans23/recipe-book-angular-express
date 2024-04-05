@@ -21,7 +21,6 @@ export class HeaderComponent {
   }
 
   onFetch(){
-    console.log("fetching");
     this.recipeService.fetchData();
   }
 }
